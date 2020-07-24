@@ -10,6 +10,10 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    # @user = User.first
+    @microposts = Micropost.find_by(user_id: params[:id])
+    # @microposts = Micropost.where(user_id: params[:id])
+    p @microposts
   end
 
   # GET /users/new
